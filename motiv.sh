@@ -34,7 +34,7 @@ start_docker() {
 install_docker() {
   if ! command -v docker &> /dev/null; then
     echo "🐳 Обнаружено отсутствие Docker. Инициируем установку..."
-    sh get-docker.sh install || handle_error "Установка Docker"
+    sh get-docker.sh || handle_error "Установка Docker"
     echo "🐳 Установка Docker завершена успешно."
     sleep 2
   else
