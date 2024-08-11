@@ -31,7 +31,7 @@ start_docker() {
 }
 
 # Установка Docker, если он не установлен
-function install_docker() {
+install_docker() {
   if ! command -v docker &> /dev/null; then
     echo "🐳 Обнаружено отсутствие Docker. Инициируем установку..."
     curl -fsSL https://github.com/BananaAlliance/tools/raw/main/docker.sh -o get-docker.sh || handle_error "Скачивание скрипта установки Docker"
@@ -45,7 +45,7 @@ function install_docker() {
 }
 
 # Функция для клонирования репозитория или обновления, если он уже существует
-function clone_or_update_repo() {
+clone_or_update_repo() {
   local repo_path="/app/backend"
   local gitssh=git@github.com:ModusMaximus/motivtgbot.git
 
@@ -63,7 +63,7 @@ function clone_or_update_repo() {
 }
 
 # Cборка
-function install() {
+install() {
   echo "🚀 Начинаем сборку проекта"
   install_docker
   clone_or_update_repo
@@ -74,13 +74,13 @@ function install() {
 }
 
 # Вывод логов
-function show_logs() {
+show_logs() {
   echo "📜 Отображение логов работы ноды Allora..."
   docker compose -f /app/backend/docker-compose.yml logs -f || handle_error "Вывод логов"
 }
 
 # Главная функция для управления аргументами
-function main() {
+main() {
   print_banner
   local action="$1"
 
