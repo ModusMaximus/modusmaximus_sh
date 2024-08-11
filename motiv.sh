@@ -55,7 +55,7 @@ clone_or_update_repo() {
     echo "🔄 Репозиторий успешно обновлен."
     sleep 2
   else
-    git clone -b main "$gitssh" "$repo_path" || handle_error "Клонирование репозитория"
+    git clone -b postgre_version "$gitssh" "$repo_path" || handle_error "Клонирование репозитория"
     echo "🎉 Репозиторий успешно склонирован."
     sleep 2
   fi
