@@ -46,7 +46,7 @@ install_docker() {
 # Функция для клонирования репозитория или обновления, если он уже существует
 clone_or_update_repo() {
   local repo_path="/app/backend"
-  local gitssh=git@github.com:ModusMaximus/motivtgbot.git
+  local gitssh="https://github.com/ModusMaximus/motivtg.git"
 
   echo "🔍 Проверка наличия репозитория по пути: $repo_path"
   if [ -d "$repo_path" ]; then
