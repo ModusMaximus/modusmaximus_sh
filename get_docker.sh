@@ -22,3 +22,17 @@ install(){
     sudo usermod -aG docker $USER
     newgrp docker
 }
+
+main() {
+  print_banner
+  local action="$1"
+
+  case "$action" in
+    "install")
+      install
+      ;;
+    *)
+      exit 2
+      ;;
+  esac
+}
