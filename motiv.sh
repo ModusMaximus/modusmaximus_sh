@@ -34,7 +34,6 @@ start_docker() {
 install_docker() {
   if ! command -v docker &> /dev/null; then
     echo "🐳 Обнаружено отсутствие Docker. Инициируем установку..."
-    curl -fsSL https://github.com/BananaAlliance/tools/raw/main/docker.sh -o get-docker.sh || handle_error "Скачивание скрипта установки Docker"
     sh get-docker.sh || handle_error "Установка Docker"
     echo "🐳 Установка Docker завершена успешно."
     sleep 2
